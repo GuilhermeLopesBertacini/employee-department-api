@@ -1,0 +1,199 @@
+{
+  "info": {
+    "name": "employee-department-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "rh-api-collection"
+  },
+  "item": [
+    {
+      "name": "Funcionários",
+      "item": [
+        {
+          "name": "Listar Funcionários",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/funcionarios",
+              "host": ["{{base_url}}"],
+              "path": ["api", "funcionarios"]
+            }
+          }
+        },
+        {
+          "name": "Buscar Funcionário por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/funcionarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "funcionarios", "1"]
+            }
+          }
+        },
+        {
+          "name": "Criar Funcionário",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/api/funcionarios",
+              "host": ["{{base_url}}"],
+              "path": ["api", "funcionarios"]
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"cpf\": \"12345678900\",\n  \"rg\": \"1234567\",\n  \"data_nascimento\": \"1990-05-01\",\n  \"endereco\": \"Rua A, 123\",\n  \"telefone\": \"(14) 99999-9999\",\n  \"email\": \"joao@email.com\",\n  \"cargo\": \"Analista\",\n  \"salario\": 3500.00,\n  \"data_admissao\": \"2024-01-01\",\n  \"data_demissao\": null,\n  \"id_departamento\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Atualizar Funcionário",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{base_url}}/api/funcionarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "funcionarios", "1"]
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cargo\": \"Gerente\",\n  \"salario\": 5000.00\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar Funcionário",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/funcionarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "funcionarios", "1"]
+            }
+          }
+        },
+        {
+          "name": "Departamento do Funcionário",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/funcionarios/1/departamento",
+              "host": ["{{base_url}}"],
+              "path": ["api", "funcionarios", "1", "departamento"]
+            }
+          }
+        },
+        {
+          "name": "Funcionários com Departamentos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/relatorio/funcionarios-com-departamentos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "relatorio", "funcionarios-com-departamentos"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Departamentos",
+      "item": [
+        {
+          "name": "Listar Departamentos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/departamentos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departamentos"]
+            }
+          }
+        },
+        {
+          "name": "Buscar Departamento por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/departamentos/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departamentos", "1"]
+            }
+          }
+        },
+        {
+          "name": "Criar Departamento",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/api/departamentos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departamentos"]
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Tecnologia\",\n  \"descricao\": \"Departamento de TI\",\n  \"data_criacao\": \"2024-01-01\",\n  \"data_atualizacao\": null\n}"
+            }
+          }
+        },
+        {
+          "name": "Atualizar Departamento",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{base_url}}/api/departamentos/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departamentos", "1"]
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descricao\": \"Atualizado para TI e Suporte\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Deletar Departamento",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/departamentos/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departamentos", "1"]
+            }
+          }
+        },
+        {
+          "name": "Funcionários de um Departamento",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/departamentos/1/funcionarios",
+              "host": ["{{base_url}}"],
+              "path": ["api", "departamentos", "1", "funcionarios"]
+            }
+          }
+        },
+        {
+          "name": "Departamentos com Funcionários",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/relatorio/departamentos-com-funcionarios",
+              "host": ["{{base_url}}"],
+              "path": ["api", "relatorio", "departamentos-com-funcionarios"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    }
+  ]
+}
