@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee', function (Blueprint $table) {
+        Schema::create('funcionario', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 100);
             $table->string('cpf', 20)->unique();
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->decimal('salario', 10, 2);
             $table->date('data_admissao');
             $table->date('data_demissao')->nullable();
+            $table->foreignId('id_departamento')->constrained('departamento')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class departamento extends Model
+class Departamento extends Model
 {
     protected $table = 'departamento';
     protected $fillable = [
@@ -14,4 +14,9 @@ class departamento extends Model
         'data_criacao',
         'data_atualizacao',
     ];
+
+    public function funcionarios()
+    {
+        return $this->hasMany(Funcionario::class, 'id_departamento');
+    }
 }

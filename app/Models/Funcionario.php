@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class funcionario extends Model
+class Funcionario extends Model
 {
     protected $table = 'funcionario';
     protected $fillable = [
@@ -20,5 +20,11 @@ class funcionario extends Model
         'salario',
         'data_admissao',
         'data_demissao',
+        'id_departamento',
     ];
+
+    public function departamento()
+    {
+        return $this->belongsTo(Departamento::class, 'id_departamento');
+    }
 }
